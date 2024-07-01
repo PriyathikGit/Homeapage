@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Header.css">
+</head>
+
+<body>
+    <div class="hero-section">
+
+        <video autoplay muted loop class="vdo" id="myVideo">
+            <source src="/assets/-4b32-4628-b617-a1591fc67a0b.mov" type="video/mp4">
+        </video>
+        <div class="center">
+            <header id="header">
+
+                <div class="top-row">
+                    <button class="menu"
+                        onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+                        aria-label="Main Menu">
+                        <svg width="30" height="30" viewBox="0 0 100 100">
+                            <path class="line line1"
+                                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                            <path class="line line2" d="M 20,50 H 80" />
+                            <path class="line line3"
+                                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                        </svg>
+                    </button>
+                    <img src="/assets/1.png" alt="" width="150px" height="40px " class="img-top">
+                    <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000" width="16.168px"
+                        height="16.168px" class="search-icon">
+
+                        <g id="SVGRepo_bgCarrier" stroke-width="1.5"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>search</title>
+                            <desc>Created with Sketch Beta.</desc>
+                            <defs> </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                                sketch:type="MSPage">
+                                <g id="Icon-Set" sketch:type="MSLayerGroup"
+                                    transform="translate(-256.000000, -1139.000000)" fill="#ffffff">
+                                    <path
+                                        d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z"
+                                        id="search" sketch:type="MSShapeGroup"> </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <nav>
+                    <ul>
+                        <li>Hair color</li>
+                        <li>Hair care</li>
+                        <li>Hair texture</li>
+                        <li>Hair Styling</li>
+                        <li>About us</li>
+                        <li>Media</li>
+                        <li>Blogs</li>
+                        <li>Contact us</li>
+                        <span class="line"></span>
+                        <svg class="nav-search-icon" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000" width="16.168px"
+                            height="16.168px">
+
+                            <g id="SVGRepo_bgCarrier" stroke-width="1.5"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <title>search</title>
+                                <desc>Created with Sketch Beta.</desc>
+                                <defs> </defs>
+                                <g id="Page-1" stroke="none" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                                    sketch:type="MSPage">
+                                    <g id="Icon-Set" sketch:type="MSLayerGroup"
+                                        transform="translate(-256.000000, -1139.000000)" fill="#ffffff">
+                                        <path
+                                            d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z"
+                                            id="search" sketch:type="MSShapeGroup"> </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </ul>
+                </nav>
+                <div class="mobile-nav">
+                    <ul>
+                        <div><li>Hair color</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                        <div><li>Hair care</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                        <div><li>Hair texture</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                        <div><li>Hair Styling</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div> 
+                        <div><li>About us</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                        <div><li>Media</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                        <div><li>Blogs</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                        <div><li>Contact us</li><svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000000"></path></g></svg></div>
+                    </ul>
+                </div>
+            </header>
+            <div class="hero-text">
+                <div class="col">
+                    <span>
+                        Godrej Professional
+                    </span>
+                    <span>The ultimate hair care bonaza</span>
+                    <button>Explore</button>
+                </div>
+                <div class="num-row">
+                    <span>01</span>
+                    <span>02</span>
+                    <span>03</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="main-txt">
+            <span>The hair colour</span>
+            <p class="sm-text">Indulge in our exclusive offer & reignite your love affair with your locks.</span>
+        </div>
+
+        <div class="image-section">
+            <div class="box">
+                <img src="/assets/image 1.png" alt="">
+                <button>Explore</button>
+            </div>
+            <div class="box-bg">
+                <div>
+                    <img src="/assets/image 35.png" alt="">
+                    <img src="/assets/dimention image 1.png" alt="" height="475.776px" width="309.183px">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow">
+            </div>
+            <div class="box-bg">
+                <div class="mx-2">
+                    <img src="/assets/image 36.png" alt="">
+                    <img src="/assets/image 33 (1).png" alt="">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow2">
+            </div>
+        </div>
+        <div class="btn-row">
+            <div class="carousel"></div>
+            <div class="btn-row">
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="main-txt">
+            <span>The Hair Care</span>
+            <p class="sm-text">Indulge in our exclusive offer & reignite your love affair with your locks.</span>
+        </div>
+
+        <div class="image-section">
+            <div class="box">
+                <img src="/assets/image 32.png" alt="">
+                <button>Explore</button>
+            </div>
+            <div class="box-bg">
+                <div>
+                    <img src="/assets/probio logo.png" alt="">
+                    <img src="/assets/probio keratin revive.png" alt="">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow">
+            </div>
+            <div class="box-bg">
+                <div class="mx-2">
+                    <img src="/assets/kera care logo.png" alt="">
+                    <img src="/assets/keracare moisture recharge shampoo.png" alt="">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow2">
+            </div>
+        </div>
+        <div class="btn-row">
+            <div class="carousel"></div>
+            <div class="btn-row">
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="main-txt">
+            <span>The Hair Texture</span>
+            <p class="sm-text">Indulge in our exclusive offer & reignite your love affair with your locks.</span>
+        </div>
+
+        <div class="image-section">
+            <div class="box">
+                <img src="/assets/image 63.png" alt="">
+                <button>Explore</button>
+            </div>
+            <div class="box-bg">
+                <div>
+                    <img src="/assets/image 64 (1).png" alt="">
+                    <img src="/assets/kerasmooth.png" alt="">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow">
+            </div>
+            <div class="box-bg">
+                <div class="mx-2">
+                    <img src="/assets/image 64 (1).png" alt="">
+                    <img src="/assets/kerasmooth (1).png" alt="">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow2">
+            </div>
+        </div>
+        <div class="btn-row">
+            <div class="carousel"></div>
+            <div class="btn-row">
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="main-txt">
+            <span>The Hair Styling</span>
+            <p class="sm-text">Indulge in our exclusive offer & reignite your love affair with your locks.</span>
+        </div>
+
+        <div class="image-section">
+            <div class="box">
+                <img src="/assets/hair styling image.png" alt="">
+                <button>Explore</button>
+            </div>
+            <div class="box-bg">
+                <div>
+                    <img src="/assets/AIM logo.png" alt="">
+                    <img src="/assets/AIM Product image 1.png" alt="" height="468">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow">
+            </div>
+            <div class="box-bg">
+                <div class="mx-2">
+                    <img src="/assets/AIM logo.png" alt="">
+                    <img src="/assets/AIM Product image 1.png" alt="" height="468">
+                </div>
+                <img src="/assets/arrow.png" alt="" class="arrow2">
+            </div>
+        </div>
+        <div class="btn-row">
+            <div class="carousel"></div>
+            <div class="btn-row">
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="sec-2">
+            <div class="inline-cnt">
+                <div class="my-1">
+                    <span>
+                        Professional Hair Colour Trends and ideas
+                    </span>
+                    <p>
+                        From curly hair to stick straight, Godrej Professional Keracare is suitable & beneficial for all
+                        hair types.
+                    </p>
+                    <button>Explore</button>
+                </div>
+                <div class="inliine-col">
+                    <div class="img-box">
+                        <div class="inline-img">
+                            <div class="img-cnt">
+                                <span>Before</span>
+                                <img src="/assets/half.png" alt="" style="position: absolute;">
+                                <div>
+                                    <div class="mid-btn">
+                                        <img src="/assets/Union.png" alt="">
+                                    </div>
+                                    <img src="/assets/image 68.png" alt="">
+                                    <span>After</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inline-img">
+                            <div class="img-cnt">
+                                <span>Before</span>
+                                <img src="/assets/half.png" alt="" style="position: absolute;">
+                                <div>
+                                    <div class="mid-btn">
+                                        <img src="/assets/Union.png" alt="">
+                                    </div>
+                                    <img src="/assets/image 68.png" alt="">
+                                    <span>After</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inline-img">
+                            <div class="img-cnt">
+                                <span>Before</span>
+                                <img src="/assets/half.png" alt="" style="position: absolute;">
+                                <div class="mid-btn">
+                                    <img src="/assets/Union.png" alt="">
+                                </div>
+                                <img src="/assets/image 68.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inline-row">
+                        <div style="color: white;" class="num-row2">
+                            <span>01</span>
+                            <span>02</span>
+                            <span>03</span>
+                        </div>
+                        <div class="arrow-btn">
+                            <span><svg viewBox="0 0 1024 1024" class="icon" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="1.5"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+                                            fill="#ffffff"></path>
+                                    </g>
+                                </svg></span>
+                            <span><svg viewBox="0 0 1024 1024" class="icon right-arrow" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                                            fill="#ffffff"></path>
+                                    </g>
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-section">
+            <div>
+                <span class="date-bx">September 14, 2023</span>
+                <p class="news-heading">
+                    Top 10 Benefits Of Using Sulphate Free Shampoos For Damaged Hair
+                </p>
+                <span class="desc">
+                    Despite the fact that sulphates are frequently viewed as a necessary component of shampoos...
+                </span>
+                <img src="/assets/first-blog-img.png" alt="">
+                <button>Read Now</button>
+            </div>
+            <div>
+                <span class="date-bx">March 6, 2023</span>
+                <p class="news-heading">
+                    Follow This Holi Hair Care Routine For Healthy Hair
+                </p>
+                <span class="desc">
+                    Despite the fact that sulphates are frequently viewed as a necessary component of shampoos...
+                </span>
+                <img src="/assets/first-blog-img.png" alt="">
+                <button>Read Now</button>
+            </div>
+            <div>
+                <span class="date-bx">May 6, 2022</span>
+                <p class="news-heading">
+                    Mother’s Day Gift Ideas For Strong Hair & Stronger Bonds
+                </p>
+                <span class="desc">
+                    Despite the fact that sulphates are frequently viewed as a necessary component of shampoos...
+                </span>
+                <img src="/assets/first-blog-img.png" alt="">
+                <button>Read Now</button>
+            </div>
+        </div>
+        <div class="btn-row">
+            <div class="carousel"></div>
+            <div class="btn-row">
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+                <button><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <div class="user-box">
+                <img src="/assets/Group 3.png" alt="">
+                <span>What Peoples say’s</span>
+            </div>
+            <div class="bx2">
+                <div class="left-cnt">
+                    <div class="review-box">
+                        <div class="star-container"></div>
+                        <h2>Fablous</h2>
+                        <p>Makes my hair super shiny and soft. Using this with same shampoo. I keep it longer than 3
+                            minutes
+                            though. Wish it was available cheaper. Hasn't made any difference to hair though.</p>
+                        <span>Neha kewalramani</span>
+                    </div>
+                    <div class="review-box">
+                        <div class="star-container"></div>
+                        <h2>Fablous</h2>
+                        <p>Makes my hair super shiny and soft. Using this with same shampoo. I keep it longer than 3
+                            minutes
+                            though. Wish it was available cheaper. Hasn't made any difference to hair though.</p>
+                        <span>Neha kewalramani</span>
+                    </div>
+                </div>
+                <div class="inline-row">
+                    <div style="color: black;" class="num-row2">
+                        <span>01</span>
+                        <span>02</span>
+                        <span>03</span>
+                    </div>
+                    <div class="arrow-btnn">
+                        <span><svg viewBox="0 0 1024 1024" class="icon" id="left-arrow" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="1.5"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+                                        fill="#ffffff"></path>
+                                </g>
+                            </svg></span>
+                        <span><svg viewBox="0 0 1024 1024" class="icon" id="right-arrow" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                                        fill="#ffffff"></path>
+                                </g>
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="brand-value">
+            <h2>Brand Value</h2>
+            <span>Despite the fact that sulphates are frequently viewed as a necessary component of shampoos</span>
+            <div class="facilities-section">
+                <div class="sm-box">
+                    <img src="/assets/Black.png" alt="">
+                    <span>No Animal Testing</span>
+                </div>
+                <div class="sm-box">
+                    <img src="/assets/tube.png" alt="">
+                    <span>No Added Parabens</span>
+                </div>
+                <div class="sm-box">
+                    <img src="/assets/Sulphate Free.png" alt="">
+                    <span>Sulphate Free</span>
+                </div>
+                <div class="sm-box">
+                    <img src="/assets/Union (1).png" alt="">
+                    <span>Enriched with UV protect</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="mx3">
+            <div class="col1">
+                <img src="/assets/Godrej Professional Logo-White.png" alt="" width="141.913px" class="footer-logo">
+                <img src="/assets/Rectangle 26.png" alt="" class="footer-img">
+                <h1>Subscribe Your Newsletter</h1>
+                <input type="text" placeholder="Enter your email id">
+            </div>
+            <div class="links">
+                <div class="mx4">
+                    <span class="border-line">Quick Links</span>
+                    <div class="mx-flex">
+                        <div class="col2">
+                            <span>Hair Colour</span>
+                            <span>Hair Care</span>
+                            <span>Hair Texture</span>
+                            <span>Hair Styling</span>
+                            <span>colour Trends & Tips</span>
+                        </div>
+                        <div class="col3">
+                            <span>About Us</span>
+                            <span>Blogs</span>
+                            <span>Saloon Locator</span>
+                            <span>Text</span>
+                            <span>Text</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col4">
+                    <span class="border-line">Contact Us</span>
+                    <span style="width: 382px;">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever.</span>
+                    <span style="width: 382px;">Helpline Number: 1800 1800 1800, 0253 876767</span>
+                    <span style="width: 382px;">Office Address: XYZ Building, XYZ Lane, XYZ City XYZ State, India -
+                        Pincode</span>
+                    <div class="logo-row">
+                        <img src="assets/Youtube.png" alt="">
+                        <img src="assets/facebook.png" alt="">
+                        <img src="assets/Clip path group.png" alt="">
+                        <img src="assets/instagram.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="accordion">
+            <div class="open">
+                <span>More</span>
+                <svg viewBox="0 0 1024 1024" class="icon arrow-icon" id="accord-open" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#ffffff">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <div class="accordion-item">
+                <span class="about"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been
+                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type specimen book.</span>
+                <span class="about">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+            </div>
+        </div>
+        <div class="copyright-section">
+            <div class="content1">
+                <span>FAQs</span>
+                <span>Terms and Condition</span>
+                <span>Privacy Policy</span>
+                <span style="border: none;">Sitemap</span>
+            </div>
+            <div class="content1">
+                Copyright &copy; 2024 Godrej Professional.
+            </div>
+        </div>
+    </footer>
+    <script src="/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<div class="inline-col">
+                    <div class="inline-img">
+                        <div class="img-cnt">
+                            <span>Before</span>
+                            <img src="/assets/half.png" alt="" style="position: absolute;">
+                            <div>
+                                <img src="/assets/image 68.png" alt="">
+                                <span>After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inline-img">
+                        <div class="img-cnt">
+                            <span>Before</span>
+                            <img src="/assets/half.png" alt="" style="position: absolute;">
+                            <div>
+                                <img src="/assets/image 68.png" alt="">
+                                <span>After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inline-img">
+                        <div class="img-cnt">
+                            <span>Before</span>
+                            <img src="/assets/half.png" alt="" style="position: absolute;">
+                            <div>
+                                <img src="/assets/image 68.png" alt="">
+                                <span>After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm-page">
+                        
+                    </div>
+                </div>
