@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Ovo&display=swap");
-
 .hero-section {
   position: relative;
 }
@@ -310,82 +308,25 @@ svg.scrolled {
   font-weight: 400;
   font-size: 16px;
 }
-
-.img-cnt div {
+/* .slider-container{
   display: flex;
-}
-
-.mid-btn {
-  border: 1px solid white;
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  left: 43%;
-  bottom: 50%;
-  fill: rgba(242, 242, 242, 0.3);
-  stroke-width: 1px;
-  stroke: var(--Neutral-Colour, #fff);
-  backdrop-filter: blur(2px);
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border-radius: 50%;
+  justify-content: center;
+  overflow: hidden;
+  width: 60%;
 }
-
-.img-cnt div span {
-  display: flex;
-  position: absolute;
-  right: 0;
-}
-
-.img-cnt span {
-  position: absolute;
-  z-index: 99;
-  padding: 20px 25px;
-}
-
-.inline-img {
-  position: relative;
-}
-
-.inline-cnt {
-  display: flex;
+.images-container {
+  overflow: hidden;
   width: 100%;
-  justify-content: space-around;
-  padding-left: 126px;
 }
-
-.inline-col {
+.sec-2-images {
   display: flex;
+  transition: transform 0.5s ease-in-out;
 }
-
-.inliine-col {
-  margin-left: 22px;
-  padding-left: 192px;
+.sec-2-images img {
+  width: 33.33%;
 }
-
-.img-box {
-  display: flex;
-  gap: 24px;
-}
-
-.inline-row {
-  display: flex;
-  justify-content: start;
-}
-
-.inline-row div {
-  margin-top: 20px;
-  display: flex;
-  gap: 62px;
-}
-
-.inline-row div span {
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-}
-
 .arrow-btn {
   position: absolute;
   right: 132px;
@@ -402,8 +343,48 @@ svg.scrolled {
 
 .num-row2 {
   gap: 13px !important;
+} */
+.text-content {
+  margin-right: 20px;
 }
 
+.image-slider {
+  position: relative;
+  width: 900px; /* Adjust width as needed */
+  overflow: hidden;
+  left: calc(39vw - 300px);
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider {
+  display: flex;
+}
+
+.slider img {
+  width: 300px; /* Adjust width to fit the container */
+  flex-shrink: 0;
+}
+
+.prev, .next {
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
 .blog-section {
   display: flex;
 }

@@ -87,16 +87,39 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", updateVideo);
 });
 
+const mobileScreen = document.querySelector(".mobile-nav");
+const hamBtn = document.querySelector(".menu");
 
-const mobileScreen = document.querySelector('.mobile-nav')
-const hamBtn = document.querySelector('.menu')
-
-hamBtn.addEventListener('click', function () {
-  if(mobileScreen.style.display==="flex"){
-    mobileScreen.style.display="none"
-    console.log("closed")
-  } else{
-    mobileScreen.style.display="flex"
-    console.log("opened")
+hamBtn.addEventListener("click", function () {
+  if (mobileScreen.style.display === "flex") {
+    mobileScreen.style.display = "none";
+    console.log("closed");
+  } else {
+    mobileScreen.style.display = "flex";
+    console.log("opened");
   }
 });
+
+function nextPage() {
+  window.location.href = "productpage.html";
+}
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slider img');
+    const totalSlides = slides.length;
+    const slideWidth = slides[0].clientWidth;
+    
+    currentSlide += direction;
+    
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 3;
+    } else if (currentSlide >= totalSlides - 2) {
+        currentSlide = 0;
+    }
+    
+    const offset = -currentSlide * slideWidth;
+    slider.style.transform = `translateX(${offset}px)`;
+}

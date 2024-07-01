@@ -1,0 +1,145 @@
+.page-level-txt {
+    font-size: 1.2rem;
+    position: relative;
+    padding: 70px 188px;
+}  
+
+.page-level-txt::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: black;
+    left: 188px;
+    right: 209px;
+    bottom: 57px;
+}
+
+.product-container {
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+}
+.image-grid {
+  flex: 1;
+}
+.box {
+  width: 384.004px;
+  height: 384.004px;
+  background-color: gainsboro;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.image-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.image-row img {
+  max-width: calc(50% - 5px);
+  height: auto;
+  display: block;
+}
+.productinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+.productinfo h1 {
+  width: 384px;
+}
+.sm-details {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+}
+
+.sm-details::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: black;
+  left: 3px;
+  right: 34px;
+  top: 43px;
+}
+.colour-row {
+  display: flex;
+  gap: 6px;
+  position: relative;
+}
+.colour-row::before{
+    content: "";
+  position: absolute;
+  height: 1px;
+  background: black;
+  left: 3px;
+  right: 34px;
+  top: 62px;
+}
+.colour {
+  width: 32px;
+  height: 32px;
+  border-radius: 48px;
+  border: 2px solid rgba(122, 18, 25, 0.26);
+  margin-top: 16px;
+}
+
+.detail {
+  display: none;
+}
+#close {
+  display: none;
+}
+.box-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-box{
+    border-bottom: 1px solid black;
+    padding: 6px 0;
+}
+.box-text svg {
+  cursor: pointer;
+}
+.desc-box li {
+  width: 382px;
+}
+
+.img-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.img-box div{
+    display: flex;
+    gap: 10px;
+}
+.logo-box{
+    display: flex;
+  padding: 10px 19px;
+  border: 1px solid black;
+}
+.img-box img{
+    width: 100px;
+}
+
+@media screen and (max-width: 480px) {
+  .product-container {
+    flex-direction: column;
+  }
+  .img-grid {
+    margin: 0 auto;
+  }
+  .box {
+    width: 100%;
+    height: auto;
+    max-width: 384px;
+  }
+  .image-row {
+    gap: 25px;
+  }
+}
