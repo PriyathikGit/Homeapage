@@ -123,3 +123,31 @@ function moveSlide(direction) {
     const offset = -currentSlide * slideWidth;
     slider.style.transform = `translateX(${offset}px)`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const boxes = entry.target.querySelectorAll('.box, .box-bg');
+        boxes.forEach((box, index) => {
+          setTimeout(() => {
+            box.classList.add('active');
+          }, index * 1000); // Adjust the delay as needed
+        });
+      } else {
+        const boxes = entry.target.querySelectorAll('.box, .box-bg');
+        boxes.forEach((box) => {
+          box.classList.remove('active');
+        });
+      }
+    });
+  }, {
+    threshold: 0.5 // Adjust this threshold as needed
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});

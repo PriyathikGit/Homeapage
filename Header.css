@@ -183,15 +183,11 @@ svg.scrolled {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  height: 572px;
+  margin: 20px 0;
 }
 
-.box {
-  position: relative;
-  display: inline-flex;
-  width: 480px;
-  height: 572px;
-  flex-shrink: 0;
-}
 
 .box button {
   position: absolute;
@@ -207,6 +203,16 @@ svg.scrolled {
   color: white;
   margin-bottom: 20px;
 }
+.box {
+  position: relative;
+  display: inline-flex;
+  width: 480px;
+  height: 572px;
+  flex-shrink: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+  transform: translateX(-100%);
+}
 
 .box-bg {
   width: 486px;
@@ -217,6 +223,9 @@ svg.scrolled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .box-bg div {
