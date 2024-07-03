@@ -16,6 +16,7 @@ header {
   height: auto;
   width: 100vw;
   transition: background-color 0.3 ease;
+  z-index: 1;
 }
 
 header:hover {
@@ -210,8 +211,9 @@ svg.scrolled {
   height: 572px;
   flex-shrink: 0;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-  opacity: 0;
-  transform: translateX(-100%);
+  /* opacity: 0; */
+  /* transform: translateX(-100%); */
+  /* transform: translateY(100%); */
 }
 
 .box-bg {
@@ -224,8 +226,9 @@ svg.scrolled {
   justify-content: center;
   align-items: center;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-  opacity: 0;
-  transform: translateX(-100%);
+  /* opacity: 0; */
+  /* transform: translateX(-100%); */
+  /* transform: translateY(100%); */
 }
 
 .box-bg div {
@@ -396,9 +399,11 @@ svg.scrolled {
 }
 .blog-section {
   display: flex;
+  transition: transform 0.5s ease;
 }
 
 .blog-section div {
+  width: calc(100% / 2.5);
   display: flex;
   flex-direction: column;
   padding: 32px;

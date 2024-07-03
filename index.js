@@ -124,30 +124,33 @@ function moveSlide(direction) {
     slider.style.transform = `translateX(${offset}px)`;
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('.section');
+  const blogSection = document.querySelector('.blog-section');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const blogDivs = document.querySelectorAll('.blog-section div');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const boxes = entry.target.querySelectorAll('.box, .box-bg');
-        boxes.forEach((box, index) => {
-          setTimeout(() => {
-            box.classList.add('active');
-          }, index * 1000); // Adjust the delay as needed
-        });
-      } else {
-        const boxes = entry.target.querySelectorAll('.box, .box-bg');
-        boxes.forEach((box) => {
-          box.classList.remove('active');
-        });
+  let currentIndex = 0;
+
+  function updateSlider() {
+      const width = blogDivs[0].clientWidth;
+      blogSection.style.transform = `translateX(${-currentIndex * width}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+      if (currentIndex < blogDivs.length - 2.5) {
+          currentIndex++;
+          updateSlider();
       }
-    });
-  }, {
-    threshold: 0.5 // Adjust this threshold as needed
   });
 
-  sections.forEach(section => {
-    observer.observe(section);
+  prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+      }
   });
+
+  window.addEventListener('resize', updateSlider);
 });
