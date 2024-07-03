@@ -882,14 +882,12 @@ img {
   .box-bg {
     align-items: center;
   }
-  .blog-section {
-    overflow: hidden;
-  }
   .news-heading {
     font-size: 32px;
     width: 100vw;
   }
   .blog-section div {
+    width: 100%;
     padding: 0;
   }
   .desc {

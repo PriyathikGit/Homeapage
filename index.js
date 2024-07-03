@@ -139,11 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   nextBtn.addEventListener('click', () => {
-      if (currentIndex < blogDivs.length - 2.5) {
-          currentIndex++;
-          updateSlider();
-      }
-  });
+    const maxIndex = window.innerWidth <= 768 ? blogDivs.length - 1 : blogDivs.length - 2.5; // Adjust max index based on screen size
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateSlider();
+    }
+});
 
   prevBtn.addEventListener('click', () => {
       if (currentIndex > 0) {
