@@ -155,3 +155,135 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', updateSlider);
 });
+
+
+const searchIcon = document.querySelector(".nav-search-icon")
+const searchDiv = document.querySelector(".searchBox")
+const smallSearchIcon = document.querySelector(".search-icon")
+searchIcon.addEventListener('click',()=>{
+  if(searchDiv.style.display==="flex"){
+    searchDiv.style.display="none"
+  } else{
+    searchDiv.style.display="flex"
+  }
+})
+
+
+smallSearchIcon.addEventListener('click',()=>{
+  if(searchDiv.style.display==="flex"){
+    searchDiv.style.display="none"
+  } else{
+    searchDiv.style.display="flex"
+  }
+})
+
+
+// const feedbackSliderWrapper = document.querySelector('.feedback-slider-wrapper');
+// const reviewBoxes = document.querySelectorAll('.review-box');
+// let reviewIndex = 0;
+// let slidesToShow = calculateSlidesToShow(); // Initially calculate slides to show
+
+// // Function to calculate number of slides to show based on screen width
+// function calculateSlidesToShow() {
+//   return window.innerWidth <= 600 ? 1 : 2; // Show 1 slide on small screens, 2 on larger screens
+// }
+
+// // Function to show reviews based on the current index
+// function showReview(index) {
+//   const totalReviews = reviewBoxes.length;
+//   const totalVisibleWidth = 100 / slidesToShow;
+
+//   if (index >= 0 && index <= totalReviews - slidesToShow) {
+//     feedbackSliderWrapper.style.transform = `translateX(${-index * totalVisibleWidth}%)`;
+//   }
+// }
+
+// // Function to go to the next review
+// function nextReview() {
+//   const totalReviews = reviewBoxes.length;
+
+//   if (reviewIndex < totalReviews - slidesToShow) {
+//     reviewIndex++;
+//     showReview(reviewIndex);
+//   }
+// }
+
+// // Function to go to the previous review
+// function prevReview() {
+//   if (reviewIndex > 0) {
+//     reviewIndex--;
+//     showReview(reviewIndex);
+//   }
+// }
+
+// // Update slides to show on window resize
+// window.addEventListener('resize', () => {
+//   slidesToShow = calculateSlidesToShow();
+//   showReview(reviewIndex);
+// });
+
+// // Show the first review initially
+// showReview(reviewIndex);
+const feedbackSliderWrapper = document.querySelector('.feedback-slider-wrapper');
+const reviewBoxes = document.querySelectorAll('.review-box');
+const feedbackDots = document.querySelector('.feedback-dots');
+let reviewIndex = 0;
+let slidesToShow = calculateSlidesToShow(); // Initially calculate slides to show
+
+// Function to calculate number of slides to show based on screen width
+function calculateSlidesToShow() {
+  return window.innerWidth <= 600 ? 1 : 2; // Show 1 slide on small screens, 2 on larger screens
+}
+
+// Function to show reviews based on the current index
+function showReview(index) {
+  const totalReviews = reviewBoxes.length;
+  const totalVisibleWidth = 100 / slidesToShow;
+
+  if (index >= 0 && index <= totalReviews - slidesToShow) {
+    feedbackSliderWrapper.style.transform = `translateX(${-index * totalVisibleWidth}%)`;
+    updateDots(index);
+  }
+}
+
+// Function to update dots based on current review index
+function updateDots(index) {  
+  const totalReviews = reviewBoxes.length;
+  feedbackDots.innerHTML = ''; // Clear existing dots
+
+  for (let i = 0; i < totalReviews; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i >= index && i < index + slidesToShow) {
+      dot.classList.add('active');
+    }
+    feedbackDots.appendChild(dot);
+  }
+}
+
+// Function to go to the next review
+function nextReview() {
+  const totalReviews = reviewBoxes.length;
+
+  if (reviewIndex < totalReviews - slidesToShow) {
+    reviewIndex++;
+    showReview(reviewIndex);
+  }
+}
+
+// Function to go to the previous review
+function prevReview() {
+  if (reviewIndex > 0) {
+    reviewIndex--;
+    showReview(reviewIndex);
+  }
+}
+
+// Update slides to show on window resize
+window.addEventListener('resize', () => {
+  slidesToShow = calculateSlidesToShow();
+  showReview(reviewIndex);
+});
+
+// Show the first review initially
+showReview(reviewIndex);

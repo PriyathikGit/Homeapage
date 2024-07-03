@@ -70,7 +70,12 @@ header:hover nav ul li {
   color: black;
   transition: 0.5s ease;
 }
-
+.nav-search-icon{
+  cursor: pointer;
+}
+header:hover .nav-search-icon{
+  filter: invert(1);
+}
 
 
 header:hover img {
@@ -505,6 +510,7 @@ button:hover {
 }
 
 .review-box {
+  min-width: 50%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -909,6 +915,9 @@ img {
     align-items: center;
     margin: 24px 0;
     padding: 15px 0;
+  }
+  .review-box{
+    min-width: 100%; 
   }
   .review-box p {
     font-size: 1rem;
