@@ -166,3 +166,17 @@ body{
 .dot.active {
   background-color: #000;
 }
+
+.num-row span {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.num-row .active {
+  color: black;
+  font-weight: bold;
+}
+
+main{
+  overflow: hidden;
+}

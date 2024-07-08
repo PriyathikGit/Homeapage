@@ -63,29 +63,24 @@ openBtn.addEventListener("click", () => {
   }
 });
 
-// slider functionality
+// document.addEventListener("DOMContentLoaded", function () {
+//   const defaultVideo = "assets/-4b32-4628-b617-a1591fc67a0b.mov";
+//   const smallVideo = "assets/-960d-4f42-b7c8-3b3ac25ec1a0.mp4";
+//   const videoContainer = document.getElementById("myVideo");
 
-const leftBtn = document.getElementById("left-arrow");
-const rightBtn = document.getElementById("right-arrow");
+//   function updateVideo() {
+//     if (window.innerWidth <= 700) {
+//       videoContainer.src = smallVideo;
+//       console.log("i running");
+//     } else {
+//       videoContainer.src = defaultVideo;
+//     }
+//   }
+//   console.log("hello");
+//   updateVideo();
 
-document.addEventListener("DOMContentLoaded", function () {
-  const defaultVideo = "assets/-4b32-4628-b617-a1591fc67a0b.mov";
-  const smallVideo = "assets/-960d-4f42-b7c8-3b3ac25ec1a0.mp4";
-  const videoContainer = document.getElementById("myVideo");
-
-  function updateVideo() {
-    if (window.innerWidth <= 700) {
-      videoContainer.src = smallVideo;
-      console.log("i running");
-    } else {
-      videoContainer.src = defaultVideo;
-    }
-  }
-  console.log("hello");
-  updateVideo();
-
-  window.addEventListener("resize", updateVideo);
-});
+//   window.addEventListener("resize", updateVideo);
+// });
 
 const mobileScreen = document.querySelector(".mobile-nav");
 const hamBtn = document.querySelector(".menu");
@@ -177,53 +172,6 @@ smallSearchIcon.addEventListener('click',()=>{
   }
 })
 
-
-// const feedbackSliderWrapper = document.querySelector('.feedback-slider-wrapper');
-// const reviewBoxes = document.querySelectorAll('.review-box');
-// let reviewIndex = 0;
-// let slidesToShow = calculateSlidesToShow(); // Initially calculate slides to show
-
-// // Function to calculate number of slides to show based on screen width
-// function calculateSlidesToShow() {
-//   return window.innerWidth <= 600 ? 1 : 2; // Show 1 slide on small screens, 2 on larger screens
-// }
-
-// // Function to show reviews based on the current index
-// function showReview(index) {
-//   const totalReviews = reviewBoxes.length;
-//   const totalVisibleWidth = 100 / slidesToShow;
-
-//   if (index >= 0 && index <= totalReviews - slidesToShow) {
-//     feedbackSliderWrapper.style.transform = `translateX(${-index * totalVisibleWidth}%)`;
-//   }
-// }
-
-// // Function to go to the next review
-// function nextReview() {
-//   const totalReviews = reviewBoxes.length;
-
-//   if (reviewIndex < totalReviews - slidesToShow) {
-//     reviewIndex++;
-//     showReview(reviewIndex);
-//   }
-// }
-
-// // Function to go to the previous review
-// function prevReview() {
-//   if (reviewIndex > 0) {
-//     reviewIndex--;
-//     showReview(reviewIndex);
-//   }
-// }
-
-// // Update slides to show on window resize
-// window.addEventListener('resize', () => {
-//   slidesToShow = calculateSlidesToShow();
-//   showReview(reviewIndex);
-// });
-
-// // Show the first review initially
-// showReview(reviewIndex);
 const feedbackSliderWrapper = document.querySelector('.feedback-slider-wrapper');
 const reviewBoxes = document.querySelectorAll('.review-box');
 const feedbackDots = document.querySelector('.feedback-dots');
@@ -287,3 +235,171 @@ window.addEventListener('resize', () => {
 
 // Show the first review initially
 showReview(reviewIndex);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const videos = [
+      "assets/big1.mp4",
+      "assets/big2.mov",
+      "assets/big1.mp4"
+  ];
+  const smallVideos = [
+      "assets/small1.mp4",
+      "assets/small2.mp4",
+      "assets/small1.mp4"
+  ];
+  const videoContainer = document.getElementById("myVideo");
+  const numRow = document.getElementById("numRow");
+  let currentIndex = 0;
+
+  function updateVideo() {
+      const isMobile = window.innerWidth <= 700;
+      videoContainer.src = isMobile ? smallVideos[currentIndex] : videos[currentIndex];
+  }
+
+  function formatNumber(number) {
+    return number < 10 ? `0${number}` : number;
+}
+
+  function highlightNumber() {
+      Array.from(numRow.children).forEach((span, index) => {
+          if (index === currentIndex) {
+              span.classList.add("active");
+          } else {
+              span.classList.remove("active");
+          }
+      });
+  }
+
+  function switchVideo(index) {
+      if (index >= 0 && index < videos.length) {
+          currentIndex = index;
+          updateVideo();
+          highlightNumber();
+      }
+  }
+
+  videos.forEach((_, index) => {
+      const span = document.createElement("span");
+      span.textContent = formatNumber(index + 1);
+      span.addEventListener("click", () => switchVideo(index));
+      numRow.appendChild(span);
+  });
+
+  updateVideo();
+  highlightNumber();
+
+  window.addEventListener("resize", updateVideo);
+
+  // Swipe functionality for mobile view
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleSwipe() {
+      if (touchEndX < touchStartX) {
+          // Swiped left
+          switchVideo((currentIndex + 1) % videos.length);
+      }
+      if (touchEndX > touchStartX) {
+          // Swiped right
+          switchVideo((currentIndex - 1 + videos.length) % videos.length);
+      }
+  }
+
+  videoContainer.addEventListener("touchstart", e => {
+      touchStartX = e.changedTouches[0].screenX;
+  });
+
+  videoContainer.addEventListener("touchend", e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+  });
+});
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const videoContainer = document.getElementById("myVideo");
+//   const numRow = document.getElementById("numRow");
+//   let videos = [];
+//   let smallVideos = [];
+//   let currentIndex = 0;
+
+//   function formatNumber(number) {
+//       return number < 10 ? `0${number}` : number;
+//   }
+
+//   function updateVideo() {
+//       const isMobile = window.innerWidth <= 700;
+//       videoContainer.src = isMobile ? smallVideos[currentIndex] : videos[currentIndex];
+//   }
+
+//   function highlightNumber() {
+//       Array.from(numRow.children).forEach((span, index) => {
+//           if (index === currentIndex) {
+//               span.classList.add("active");
+//           } else {
+//               span.classList.remove("active");
+//           }
+//       });
+//   }
+
+//   function switchVideo(index) {
+//       if (index >= 0 && index < videos.length) {
+//           currentIndex = index;
+//           updateVideo();
+//           highlightNumber();
+//       }
+//   }
+
+//   function fetchVideos() {
+//       fetch('getVideos.php')
+//           .then(response => response.json())
+//           .then(data => {
+//               data.forEach(video => {
+//                   videos.push(video.default);
+//                   smallVideos.push(video.small);
+//               });
+//               populateNumRow();
+//               updateVideo();
+//               highlightNumber();
+//           })
+//           .catch(error => console.error('Error fetching videos:', error));
+//   }
+
+//   function populateNumRow() {
+//       videos.forEach((_, index) => {
+//           const span = document.createElement("span");
+//           span.textContent = formatNumber(index + 1);
+//           span.addEventListener("click", () => switchVideo(index));
+//           numRow.appendChild(span);
+//       });
+//   }
+
+//   fetchVideos();
+
+//   window.addEventListener("resize", updateVideo);
+
+//   // Swipe functionality for mobile view
+//   let touchStartX = 0;
+//   let touchEndX = 0;
+
+//   function handleSwipe() {
+//       if (touchEndX < touchStartX) {
+//           // Swiped left
+//           switchVideo((currentIndex + 1) % videos.length);
+//       }
+//       if (touchEndX > touchStartX) {
+//           // Swiped right
+//           switchVideo((currentIndex - 1 + videos.length) % videos.length);
+//       }
+//   }
+
+//   videoContainer.addEventListener("touchstart", e => {
+//       touchStartX = e.changedTouches[0].screenX;
+//   });
+
+//   videoContainer.addEventListener("touchend", e => {
+//       touchEndX = e.changedTouches[0].screenX;
+//       handleSwipe();
+//   });
+// });

@@ -959,6 +959,9 @@ img {
   .col4 span {
     width: auto !important;
   }
+  .num-row{
+    gap: 5px;
+  }
   .mx4 {
     margin: 0 auto;
   }
